@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista de pacientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+    <ion-item *ngFor="let item of pacientes" (click)="editPaciente(item)">
+     <ion-avatar item-start>
+      <img src="{{item.value.foto}}">
+     </ion-avatar>
+      <h2>Paciente: {{item.value.nome}}</h2>
+      <p>Tipo de convênio: {{item.value.convenio}}</p>
+      <p>{{item.value.cidade}} - {{item.value.UF}}</p>
+    </ion-item>
+  
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="cadastroPaciente()"><ion-icon name="add" ></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

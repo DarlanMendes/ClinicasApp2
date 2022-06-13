@@ -1,0 +1,25 @@
+page-pacientes-form {
+    ion-select{
+        max-width:90%;
+    }
+    .button-block-md{
+       width:30%;
+       display:inline;
+       margin-left: 60px;
+       margin-right: auto;
+    }
+    .item-md ion-avatar img{
+        width:150px;
+        height:150px;
+    }
+    #fotoPaciente{
+        margin: 0 0px 0 50px;
+        display:block;
+    }
+    .item-md ion-avatar[item-start]{
+        margin: 8px 8px 8px 33%;
+    }
+    label{
+        margin:0 0 0 33%;
+    }
+}

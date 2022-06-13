@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-item>
+      <ion-avatar item-start (click)="TirarFoto()">
+        <img src="{{this.pacientes?.foto}}" >
+        <label>  FOTO</label>
+      </ion-avatar>
+      <!-- <button ion-button clear block (click)="TirarFoto()">Tirar foto</button> -->
+    </ion-item>
+
+  </ion-item>
+  <ion-item>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="pacientes.nome"></ion-input>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label >Matrícula</ion-label>
+    <ion-input type="text"[(ngModel)]="pacientes.matricula"></ion-input>
+  </ion-item>
+  <ion-item> -->
+  <ion-item>
+    <ion-label>Convênio</ion-label>
+    <ion-select [(ngModel)]="pacientes.convenio">
+      <ion-option value="individual">Convênios de saúde individual</ion-option>
+      <ion-option value="empresarial">Convênios de saúde empresarial</ion-option>
+      <ion-option value="adesao">Convênios de saúde por adesão</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefone</ion-label>
+    <ion-input type="text" [(ngModel)]="pacientes.telefone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Endereço</ion-label>
+    <ion-input type="text" [(ngModel)]="pacientes.endereco"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cidade</ion-label>
+    <ion-input type="text" [(ngModel)]="pacientes.cidade"></ion-input>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label >UF</ion-label>
+    <ion-input type="text"[(ngModel)]="pacientes.UF"></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>UF</ion-label>
+    <ion-select [(ngModel)]="pacientes.UF">
+      <ion-option value="CE">CEARÁ</ion-option>
+      <ion-option value="RN">RIO GRANDE DO NORTE</ion-option>
+      <ion-option value="MA">MARANHÃO</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button round block (click)="Salvar()">Salvar</button>
+  <button ion-button round block *ngIf="pacienteID" (click)="deletarPaciente()" color="danger" outline>Excluir perfil</button>
+
+</ion-content>

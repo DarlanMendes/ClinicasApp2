@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-item>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="medicos.nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Especialidades</ion-label>
+    <ion-select [(ngModel)]="medicos.especialidades">
+      <ion-option value="clinicoGeral">Clínico-geral</ion-option>
+      <ion-option value="cardiologista">Cardiologista</ion-option>
+      <ion-option value="Neurologista">Neurologista</ion-option>
+      <ion-option value="Pediatra">Pediatra</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefone</ion-label>
+    <ion-input type="text" [(ngModel)]="medicos.telefone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>CRM</ion-label>
+    <ion-input type="text" [(ngModel)]="medicos.crm"></ion-input>
+  </ion-item>
+  
+    
+  <ion-item>
+    <ion-label>Status</ion-label>
+    <ion-select [(ngModel)]="medicos.status">
+      <ion-option value="ativo">Ativo</ion-option>
+      <ion-option value="inativo">Inativo</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button round block (click)="Salvar()">Salvar</button>
+  <button ion-button round block  *ngIf="medicoID" (click)="deletarMedico()" color="danger" outline>Excluir perfil</button>
+
+</ion-content>

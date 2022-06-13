@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista de médicos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+    <ion-item *ngFor="let item of medicos" (click)="editMedico(item)">
+     
+      <h2>Médico: {{item.value.nome}}</h2>
+      <p>CRM: {{item.value.crm}}</p>
+      <p>telefone: {{item.value.telefone}} -    status: {{item.value.status}}</p>
+    </ion-item>
+  
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="cadastroMedico()"><ion-icon name="add" ></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

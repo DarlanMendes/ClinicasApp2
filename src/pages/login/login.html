@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>APP CLINICA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+  <button ion-button color="primary" round (click)="FazerLogin()">Fazer login</button>
+  <button ion-button color="primary" clear round (click)=" abrirCadastrar()">Não possui cadastro ainda? Clique aqui.</button>
+  <button ion-button color="primary" clear round (click)=" abrirRecuperacao()">Se deseja recuperar a senha, clique aqui.</button>
+
+
+</ion-content>

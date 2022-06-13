@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro usuário</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="usuarios.nomeUsuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="usuarios.email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Senha</ion-label>
+      <ion-input type="password"[(ngModel)]="usuarios.senha"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+  <button ion-button color="primary" round (click)="cadastrar()">Cadastrar</button>
+
+
+
+</ion-content>
