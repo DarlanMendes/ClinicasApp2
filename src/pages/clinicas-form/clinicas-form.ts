@@ -98,7 +98,7 @@ export class ClinicasFormPage {
     alert.present();
     this.navCtrl.pop();
   }
-
+ //-----------------------
 }
 
 
