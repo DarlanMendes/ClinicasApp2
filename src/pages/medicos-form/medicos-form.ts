@@ -37,13 +37,13 @@ export class MedicosFormPage {
   
   Salvar() {
     if (this.medicoID) {
-      this.medicosProvider.atualizarMedico(this.medicoID, this.medicos).then(_database => {
+      this.medicosProvider.atualizarMedicoFS(this.medicoID, this.medicos).then(_database => {
         const mensagem = 'Usuario atualizado com sucesso';
         this.showAlert(mensagem);
       })
 
     } else {
-      this.medicosProvider.cadastrarMedico(this.medicos).then(_database => {
+      this.medicosProvider.cadastrarMedicoFS(this.medicos).then(_database => {
         const mensagem = 'Usuario cadastrado com sucesso'
         this.showAlert(mensagem);
       })
@@ -66,7 +66,7 @@ export class MedicosFormPage {
             text: 'Sim, desejo!',
             handler: () => {
               if(this.medicoID){
-              this.medicosProvider.deleteMedico(this.medicoID).then(data => {
+              this.medicosProvider.deleteMedicoFS(this.medicoID).then(data => {
                 const mensagem = 'Médico excluído com sucesso';
                 this.showAlert(mensagem);
                 console.log(this.medicoID);

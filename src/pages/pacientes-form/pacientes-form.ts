@@ -47,13 +47,13 @@ export class PacientesFormPage {
   }
   Salvar() {
     if (this.pacienteID) {
-      this.pacientesProvider.atualizarPaciente(this.pacienteID, this.pacientes).then(_database => {
+      this.pacientesProvider.atualizarPacienteFS(this.pacienteID, this.pacientes).then(_database => {
         const mensagem = 'Usuario atualizado com sucesso';
         this.showAlert(mensagem);
       })
 
     } else {
-      this.pacientesProvider.cadastrarPaciente(this.pacientes).then(_database => {
+      this.pacientesProvider.cadastrarPacienteFS(this.pacientes).then(_database => {
         const mensagem = 'Usuario cadastrado com sucesso'
         this.showAlert(mensagem);
       })
@@ -76,7 +76,7 @@ export class PacientesFormPage {
             text: 'Sim, desejo!',
             handler: () => {
               if(this.pacienteID){
-              this.pacientesProvider.deletePaciente(this.pacienteID).then(data => {
+              this.pacientesProvider.deletePacienteFS(this.pacienteID).then(data => {
                 const mensagem = 'Paciente excluído com sucesso';
                 this.showAlert(mensagem);
                 console.log(this.pacienteID);

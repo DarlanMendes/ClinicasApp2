@@ -27,7 +27,7 @@ export class ClinicasListPage {
     this.navCtrl.push('ClinicasFormPage');
   }
   listarClinica(){
-    this.clinicasProvider.listarClinica().subscribe(_database=>{
+    this.clinicasProvider.listarClinicaFS().subscribe(_database=>{
       this.clinicas=_database;
     }),console.error();
     (error=>{

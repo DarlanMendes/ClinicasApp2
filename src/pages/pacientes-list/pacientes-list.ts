@@ -27,7 +27,7 @@ export class PacientesListPage {
     this.navCtrl.push('PacientesFormPage');
   }
   listarPaciente(){
-    this.pacientesProvider.listarPaciente().subscribe(_database=>{
+    this.pacientesProvider.listarPacienteFS().subscribe(_database=>{
       this.pacientes=_database;
     }),console.error();
     (error=>{

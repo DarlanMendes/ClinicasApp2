@@ -27,7 +27,7 @@ export class MedicosListPage {
     this.navCtrl.push('MedicosFormPage');
   }
   listarMedico(){
-    this.medicosProvider.listarMedico().subscribe(_database=>{
+    this.medicosProvider.listarMedicoFS().subscribe(_database=>{
       this.medicos=_database;
     }),
     (error=>{

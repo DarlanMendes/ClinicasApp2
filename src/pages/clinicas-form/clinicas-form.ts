@@ -43,20 +43,20 @@ export class ClinicasFormPage {
 
   Salvar() {
     if (this.clinicaID) {
-      this.clinicasProvider.atualizarClinica(this.clinicaID, this.clinicas).then(_database => {
+      this.clinicasProvider.atualizarClinicaFS(this.clinicaID, this.clinicas).then(_database => {
         const mensagem = 'Usuario atualizado com sucesso';
         this.showAlert(mensagem);
       })
 
     } else {
-      this.clinicasProvider.cadastrarClinica(this.clinicas).then(_database => {
+      this.clinicasProvider.cadastrarClinicaFS(this.clinicas).then(_database => {
         const mensagem = 'Usuario cadastrado com sucesso'
         this.showAlert(mensagem);
       })
     }
   }
 
-  deletarclinica() {
+  deletarClinica() {
     {
       const confirm = this.alertCtrl.create({
         title: 'Excluir clinica?',
@@ -72,7 +72,7 @@ export class ClinicasFormPage {
             text: 'Sim, desejo!',
             handler: () => {
               if (this.clinicaID) {
-                this.clinicasProvider.deleteClinica(this.clinicaID).then(data => {
+                this.clinicasProvider.deleteClinicaFS(this.clinicaID).then(data => {
                   const mensagem = 'clinica excluído com sucesso';
                   this.showAlert(mensagem);
                   console.log(this.clinicaID);
