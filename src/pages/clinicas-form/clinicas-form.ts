@@ -18,7 +18,7 @@ export class ClinicasFormPage {
 
   titulo = '';
   clinicaID = undefined;
-  clinicas = { nome: '', endereco: '', cidade: '', UF: '' };
+  clinicas = { nome: '', endereco: '', cidade: '', UF: '' , lat:'', lng:''};
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public clinicasProvider: ClinicasProvider,
@@ -36,7 +36,7 @@ export class ClinicasFormPage {
 
 
 
-  ionnViewDidLoad() {
+  ionViewDidLoad() {
 
   }
 

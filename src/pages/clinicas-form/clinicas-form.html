@@ -29,6 +29,18 @@
       <ion-option value="MA">MARANHÃO</ion-option>
     </ion-select>
   </ion-item>
+
+  <ion-item>
+    <ion-label>Latitude</ion-label>
+    <ion-input type="number" [(ngModel)]="clinicas.lat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Longitude</ion-label>
+    <ion-input type="number" [(ngModel)]="clinicas.lng"></ion-input>
+  </ion-item>
+
+
   <button ion-button round block (click)="Salvar()">Salvar</button>
   <button ion-button round block *ngIf="clinicaID" (click)="deletarClinica()" color="danger" outline>Excluir perfil</button>
 
