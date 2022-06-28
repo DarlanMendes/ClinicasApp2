@@ -1,5 +1,24 @@
 page-recuperar-usuario {
-    .button-md-primary{
-        margin:20px 27%;
+    .conteudo {
+        background-image: url(../../assets/imgs/cover.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 5% 40%;
+     }
+     .email{
+        background-color:transparent;
+        ::placeholder{
+            color:white;
+        }
+     }
+    .btn{
+       background-color:sandybrown;
+       margin-top: 40px;
+       text-transform:none;
+    }
+    ion-input{
+        background-color: rgba(254, 254, 254, 0.509);
+        border-radius:20px;
+        
     }
 }

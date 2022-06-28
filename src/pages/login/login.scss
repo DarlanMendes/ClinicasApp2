@@ -1,14 +1,56 @@
 page-login {
- margin:0 auto 0 auto;
- .button-clear-md-primary {
-    margin:0 10% 0 15%;
-    padding: 0 0 0 0;
- }
- .button-md-primary{
-    margin: 10px auto 20px 33%;
-    width:auto;
- }
- .input-cover{
-    margin:20px 0;
- }
+   .conteudo {
+      
+     
+      background-image: url(../../assets/imgs/cover.jpg);
+     
+      
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 5% 40%;
+   }
+
+   
+   
+      
+   
+   ion-input{
+      background-color: rgba(255, 255, 255, 0.508);
+      border-radius: 20px;
+      
+   }
+   ion-grid{
+      ion-row{
+          ion-col{
+              img{
+                  margin-left: 20%;
+                  margin-right: 20%;
+              }
+          }
+      }
+  }
+   
+
+   .margin-input-top{
+      margin: 20px 0 0 0;
+      background-color: transparent;
+      ::placeholder{
+         color:white;
+      }
+   }
+
+   .btn {
+      margin: 30px 0 0 0;
+      background-color: sandybrown;
+      text-transform:none;
+      font-size: 18px;
+   }
+   .btn2{
+      color:white;
+      text-transform: none;
+      text-align: center;
+   }
+
+
 }

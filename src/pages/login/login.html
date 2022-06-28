@@ -1,28 +1,43 @@
+<ion-header transparent>
 
-<ion-header>
-  <ion-navbar>
-    <ion-title>APP CLINICA</ion-title>
-  </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
+<ion-content padding class="conteudo">
 
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="text" [(ngModel)]="email"></ion-input>
+
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col >
+        <img class="logo" src="../../assets/imgs/logoClinica.png" alt="" height="200px" >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list class="conteudo-input">
+
+    <ion-item class="margin-input-top">
+      <ion-label></ion-label>
+      <ion-input type="text" [(ngModel)]="email" placeholder="E-mail"></ion-input>
     </ion-item>
-  
-    <ion-item>
-      <ion-label floating>Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+
+    <ion-item class="margin-input-top">
+      <ion-label></ion-label>
+      <ion-input type="password" [(ngModel)]="senha" placeholder="Senha"></ion-input>
     </ion-item>
-  
+
+
   </ion-list>
 
-  <button ion-button color="primary" round (click)="FazerLogin()">Fazer login</button>
-  <button ion-button color="primary" clear round (click)=" abrirCadastrar()">Não possui cadastro ainda? Clique aqui.</button>
-  <button ion-button color="primary" clear round (click)=" abrirRecuperacao()">Se deseja recuperar a senha, clique aqui.</button>
+  <button ion-button full color="primary" round (click)="FazerLogin()" class="btn">Entrar</button>
+  <button ion-button full color="primary" clear round (click)=" abrirCadastrar()" class="btn2">Não possui cadastro
+    ainda? Clique
+    aqui.</button>
+  <ion-footer>
+    <button ion-button full color="primary" clear round (click)=" abrirRecuperacao()" class="btn2">Se deseja recuperar a
+      senha, clique
+      aqui.</button>
+  </ion-footer>
+
 
 
 </ion-content>

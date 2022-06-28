@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ClinicasProvider } from '../../providers/clinicas/clinicas';
+import { ExportProvider } from '../../providers/export/export';
 
 
 declare var google: any;
@@ -12,8 +13,9 @@ declare var google: any;
 export class HomePage {
   @ViewChild('map') mapElement : ElementRef;
   map;
-  cl=[]
-  constructor(public navCtrl: NavController,public clinicasProvider:ClinicasProvider) {
+  cl=[];
+  clinic=[];
+  constructor(public navCtrl: NavController,public clinicasProvider:ClinicasProvider, public exportProvider:ExportProvider) {
     
   }
 
@@ -25,6 +27,7 @@ export class HomePage {
   }
     recebeLocalMap(){
     this.clinicasProvider.listarClinicaFS().subscribe((clinica)=>{
+      this.clinic= clinica;
        for(var i=0;i<clinica.length; i++){
         
         let localClinica=
@@ -68,4 +71,40 @@ export class HomePage {
     
   }
 
+
+
+  // Geração de documentos
+  gerarPDF(){
+    this.exportProvider.gerarPDF(this.exportarDados(), 'clinicas');
+  }
+  gerarCSV(){
+    this.exportProvider.gerarCSV(this.exportarDados(),'clinicas');
+  }
+  gerarExcel(){
+   
+    this.exportProvider.gerarExcel(this.exportarDados(),'clinicas');
+  }
+
+
+
+  private exportarDados(){
+    const jsonArr = [];
+    for (let i=0; i<this.clinic.length; i++){
+      const element = this.clinic[i];
+      //const key = element.key;
+      const value = element.value;
+      
+      let _item={
+        'UF': value.UF,
+        'cidade': value.cidade,
+        'endereço': value.endereco,
+        'latitude': value.lat,
+        'longitude': value.lng,
+        'nome': value.nome
+      };
+      jsonArr.push(_item);
+     
+    }
+    return jsonArr;
+  }
 }

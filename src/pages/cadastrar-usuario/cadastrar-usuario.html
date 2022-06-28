@@ -1,31 +1,40 @@
 
 <ion-header>
-  <ion-navbar>
+  <ion-navbar transparent>
     <ion-title>Cadastro usuário</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="conteudo">
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col >
+        <img class="logo" src="../../assets/imgs/logoClinica.png" alt="" height="200px" >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+
   <ion-list>
 
-    <ion-item>
-      <ion-label floating>Nome</ion-label>
-      <ion-input type="text" [(ngModel)]="usuarios.nomeUsuario"></ion-input>
+    <ion-item class="margin-input-top">
+      <ion-label floating></ion-label>
+      <ion-input type="text" [(ngModel)]="usuarios.nomeUsuario" placeholder="Nome"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="text" [(ngModel)]="usuarios.email"></ion-input>
+    <ion-item class="margin-input-top">
+      <ion-label floating></ion-label>
+      <ion-input type="text" [(ngModel)]="usuarios.email" placeholder="E-mail"></ion-input>
     </ion-item>
   
-    <ion-item>
-      <ion-label floating>Senha</ion-label>
-      <ion-input type="password"[(ngModel)]="usuarios.senha"></ion-input>
+    <ion-item class="margin-input-top">
+      <ion-label floating></ion-label>
+      <ion-input type="password"[(ngModel)]="usuarios.senha" placeholder="Senha"></ion-input>
     </ion-item>
   
   </ion-list>
-
-  <button ion-button color="primary" round (click)="cadastrar()">Cadastrar</button>
+  <button ion-button full color="primary" round (click)="cadastrar()" class="btn">Cadastrar</button>
 
 
 

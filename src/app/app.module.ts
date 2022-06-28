@@ -19,6 +19,7 @@ import { MedicosProvider } from '../providers/medicos/medicos';
 import { ClinicasProvider } from '../providers/clinicas/clinicas';
 import { UserProvider } from '../providers/user/user';
 import { IonicStorageModule } from '@ionic/storage';
+import { ExportProvider } from '../providers/export/export';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDFlwbpaAVqR26fa2IlvGUQUf8UwXoV1eY",
@@ -63,6 +64,7 @@ const firebaseConfig = {
     MedicosProvider,
     ClinicasProvider,
     UserProvider,
+    ExportProvider,
   ]
 })
 export class AppModule {}

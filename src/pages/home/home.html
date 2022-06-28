@@ -11,8 +11,26 @@
   <ion-grid>
 
     <div #map id="map"></div>
+
+    <ion-fab left bottom>
+      <button ion-fab color="primary">
+        <ion-icon name="arrow-dropup"></ion-icon>
+      </button>
+      <ion-fab-list side="top" (click)="gerarPDF()">
+        <button ion-fab>
+          <ion-icon name="document" ></ion-icon> PDF
+        </button>
+        <button ion-fab (click)="gerarCSV()">
+          <ion-icon name="pie" ></ion-icon> CSV
+        </button>
+        <button ion-fab (click)="gerarExcel()">
+          <ion-icon name="photos"  ></ion-icon> XLSX
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+
   </ion-grid>
 
-  
+
 
 </ion-content>

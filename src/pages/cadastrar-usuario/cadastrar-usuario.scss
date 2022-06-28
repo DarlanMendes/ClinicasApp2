@@ -1,5 +1,56 @@
 page-cadastrar-usuario {
-    .button-md-primary{
-        margin:0 33%;
+
+    .toolbar-title{
+        color: white;
     }
+    .back-button{
+        color: white;
+        
+    }
+    
+    
+    .conteudo {
+        background-image: url(../../assets/imgs/cover.jpg);
+         background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 5% 40%;
+    }
+
+    ion-grid{
+        ion-row{
+            ion-col{
+                img{
+                    margin-left: 20%;
+                    margin-right: 20%;
+                }
+            }
+        }
+    }
+    .input-cover {
+        background-color: rgba(255, 255, 255, 0.316);
+        border-radius: 20px;
+        
+    }
+    
+
+    
+
+    .margin-input-top {
+        background-color: transparent;
+        margin:20px 0 0 0;
+        ::placeholder{
+            color:white;
+        }
+    }
+
+    .btn {
+        margin: 30px 0 0 0;
+        background-color: sandybrown;
+        text-transform: none;
+        font-size: 18px;
+    }
+
+    
+
+
 }
