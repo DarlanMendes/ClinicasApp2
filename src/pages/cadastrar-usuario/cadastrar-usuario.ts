@@ -9,7 +9,7 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'cadastrar-usuario.html',
 })
 export class CadastrarUsuarioPage {
-  usuarios={email:'', senha:'', nome:''}
+  usuarios={email:'', senha:'', nomeUsuario:'', id:''}
   constructor(public navCtrl: NavController, public navParams: NavParams, public usuarioProvider:UserProvider,public alertCtrl: AlertController) {
   }
 
@@ -19,14 +19,19 @@ export class CadastrarUsuarioPage {
   cadastrar(){
     const email = this.usuarios.email;
     const senha = this.usuarios.senha;
+    const nomeUsuario = this.usuarios.nomeUsuario;
+    const id = this.usuarios.id;
     this.usuarioProvider.CadastrarUsuario(email,senha).
-    then(sucesso=>{
-      console.log(sucesso);
+    then(usuario=>{
+      console.log(usuario);
       const mensagem='Usuário cadastrado com sucesso';
+      
       this.navCtrl.pop();
       this.showAlert(mensagem);
+      this.SalvarUsuario(usuario.uid,this.usuarios);
+      
     }).catch(error=>{
-      console.log(error);
+      console.log('error', error);
       const mensagem='Ocorreu um erro no cadastro';
       this.showAlert(mensagem);
     });
@@ -37,6 +42,13 @@ export class CadastrarUsuarioPage {
         buttons: ['OK']
       });
       alert.present();
+    }
+    SalvarUsuario(usuario,usuarios){
+      this.usuarioProvider.SalvarUsuario(usuario,usuarios).then(sucesso=>{
+        console.log('salvo', sucesso);
+      }).catch(erro=>{
+        console.log('erro salvar usuario',erro);
+      });
     }
   }
   

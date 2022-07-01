@@ -35,9 +35,16 @@ export class LoginPage {
     const email=this.email;
     const senha= this.senha;
     this.usuarioProvider.Login(email,senha).then(usuario=>{
-      console.log(usuario);
-      this.storage.set('usuario',usuario.uid).then(sucesso=>{
-      console.log(sucesso)
+      this.usuarioProvider.NomeUsuario(usuario.uid).subscribe(_data=>{
+        this.storage.set('usuarioNome', _data['nomeUsuario']).then();
+      })
+      this.storage.set('usuarioEmail', usuario.email).then(sucesso=>{
+        this.storage.set('usuario',usuario.uid).then(sucesso=>{
+         }
+      )
+      
+        
+      
       const mensagem='Usuário logado com sucesso';
       this.navCtrl.setRoot(HomePage);
       this.showAlert(mensagem);

@@ -39,7 +39,8 @@ export class PacientesFormPage {
 
 
   TirarFoto() {
-    this.camera.FazerFoto().then((imageData) => {
+    const fonte=1; // CAMERA: 1;
+    this.camera.FazerFoto(fonte).then((imageData) => {
       this.pacientes.foto = 'data:image/jpeg;base64,' + imageData;
 
     }, (err) => {

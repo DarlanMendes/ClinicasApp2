@@ -1,6 +1,6 @@
 {
   "name": "clinicas",
-  "app_id": "",
+  "app_id": "CLINICAS",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

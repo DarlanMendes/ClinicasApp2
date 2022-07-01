@@ -25,7 +25,7 @@ export class MyApp {
       { title: 'Pacientes', component: 'PacientesListPage'},
       { title: 'Médicos', component: 'MedicosListPage'},
       { title: 'Clinicas', component:'ClinicasListPage'},
-      
+      { title: 'Configurações', component:'ConfiguracoesPage'},
     ];
 
   }

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ConfiguracoesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+ 
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img  src="{{this.usuario?.foto}}" alt="">
+  </ion-card>
+  <button ion-button full color="primary" round (click)="EscolherFoto()" class="btn">Escolha sua foto de perfil</button>
+  <ion-item>
+    <ion-label>Usuario:</ion-label>
+    <ion-input type="text" [(ngModel)]="this.usuario.nomeUsuario"></ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>E-mail:</ion-label>
+    <ion-input type="email"[(ngModel)]="this.usuario.email"></ion-input>
+  </ion-item>
+  <ion-footer>
+    <button ion-button full color="primary" round (click)="SalvarPerfil()" class="btn">Salvar perfil</button>
+  </ion-footer>
+
+</ion-content>

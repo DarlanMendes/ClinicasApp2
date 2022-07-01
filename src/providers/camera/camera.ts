@@ -13,20 +13,22 @@ export class CameraProvider {
   constructor(public camera:Camera) {
     console.log('Hello CameraProvider Provider');
   }
-  FazerFoto(){
-    
+  FazerFoto(fonte){
    
     const options: CameraOptions = {
       quality: 100,
+      sourceType:fonte,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation:true
+      correctOrientation:true,
+       
+    
     }
 
   
    return this.camera.getPicture(options);
-
-   
+  
+  
   }
 }
